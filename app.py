@@ -3,6 +3,8 @@ import cv2
 import numpy as np
 import os
 from datetime import datetime
+from orientation import detect_angle
+
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "static/uploads"
@@ -45,14 +47,16 @@ def home():
         file.save(path)
 
         image = cv2.imread(path)
-        detected = detect_orientation(image)
+        #detected = detect_orientation(image)
+        detected = detect_angle(image)
+
 
         rotation_fix = {
             0: image,
-            90: cv2.rotate(image, cv2.ROTATE_90_COUNTERCLOCKWISE),
+            90: cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE),          # correct
             180: cv2.rotate(image, cv2.ROTATE_180),
-            270: cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
-        }
+            270: cv2.rotate(image, cv2.ROTATE_90_COUNTERCLOCKWISE)   # correct
+            }
 
         corrected = rotation_fix[detected]
 

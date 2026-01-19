@@ -41,8 +41,14 @@
         <input type="file" name="image" required>
         <button type="submit">Upload & Normalize</button>
     </form>
+ 
 
     {% if angle is defined %}
+    <h2>Detected Angle: {{ angle }}°</h2>
+    <img src="{{ original }}">
+    {% endif %}
+
+    <!-- {% if angle is defined %}
         <h2>Detected Rotation: {{ angle }}°</h2>
 
         <h3>Original</h3>
@@ -50,7 +56,7 @@
 
         <h3>Corrected</h3>
         <img src="{{ corrected }}">
-    {% endif %}
+    {% endif %} -->
 </div>
 
 </body>
