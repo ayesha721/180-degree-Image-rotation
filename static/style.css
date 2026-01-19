@@ -1,0 +1,36 @@
+body{
+background: linear-gradient(135deg,#1d2671,#c33764);
+font-family: Segoe UI;
+color:white;
+text-align:center;
+}
+
+.box{
+background: rgba(0,0,0,0.4);
+padding:30px;
+width:70%;
+margin:auto;
+margin-top:40px;
+border-radius:15px;
+}
+
+button{
+padding:10px 20px;
+border-radius:8px;
+border:none;
+background:#00ffd5;
+font-weight:bold;
+cursor:pointer;
+}
+
+.row{
+display:flex;
+justify-content:space-around;
+margin-top:20px;
+}
+
+img{
+width:300px;
+border-radius:10px;
+box-shadow:0 0 20px rgba(255,255,255,0.4);
+}
