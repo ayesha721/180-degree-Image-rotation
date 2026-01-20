@@ -1,54 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Smart Orientation Fixer</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: linear-gradient(45deg,#1d0036,#7a004e);
-            color: white;
-            text-align: center;
-        }
-        .box {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 15px;
-            width: 80%;
-            margin: auto;
-        }
-        img {
-            width: 350px;
-            border-radius: 15px;
-            margin: 15px;
-            box-shadow: 0 0 15px black;
-        }
-        button {
-            padding: 10px 25px;
-            border-radius: 8px;
-            border: none;
-            background: cyan;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+    <title>Photo Angle Detector</title>
+    <link rel="stylesheet" href="/static/style.css"> <!-- Link to the CSS file -->
+    
 </head>
 <body>
 
 <div class="box">
-    <h1>📷 Smart Image Orientation Fixer</h1>
+    <h1>📷 Photo Angle Detector</h1>
 
     <form method="POST" enctype="multipart/form-data">
         <input type="file" name="image" required>
-        <button type="submit">Upload & Normalize</button>
+        <button type="submit">Upload & know the angle</button>
     </form>
  
 
-    {% if angle is defined %}
+   <!--  {% if angle is defined %}
     <h2>Detected Angle: {{ angle }}°</h2>
     <img src="{{ original }}">
-    {% endif %}
+    {% endif %} -->
 
-    <!-- {% if angle is defined %}
+    {% if angle is defined %}
         <h2>Detected Rotation: {{ angle }}°</h2>
 
         <h3>Original</h3>
@@ -56,7 +29,7 @@
 
         <h3>Corrected</h3>
         <img src="{{ corrected }}">
-    {% endif %} -->
+    {% endif %}
 </div>
 
 </body>
